@@ -36,4 +36,4 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest -m "not grading"
+          pytest

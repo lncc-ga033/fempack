@@ -43,7 +43,7 @@ minversion = "7.0"
 testpaths = [
   "tests",
 ]
-addopts = ". -q -v"
+addopts = ". -q -v -m 'not grading'"
 markers = [
   "regression: regression tests using pytest-regressions",
   "grading: tests used for grading student assignments",
