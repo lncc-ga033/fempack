@@ -215,3 +215,6 @@ environment.yml
 
 # Others
 .DS_Store
+
+# Docs
+_build

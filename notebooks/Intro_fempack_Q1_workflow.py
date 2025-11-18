@@ -193,7 +193,7 @@ print(f"  max(uh) = {uh.max():.3e}")
 fig, ax = plt.subplots(figsize=(8, 8))
 ax.spy(A_bc, markersize=5)
 ax.set_title(
-    f"Padrão de esparsidade de A ({A_bc.shape[0]} x {A_bc.shape[1]}, nnz = {A_bc.nnz})"
+    f"Padrão de esparsidade de A_bc ({A_bc.shape[0]} x {A_bc.shape[1]}, nnz = {A_bc.nnz})"
 )
 ax.set_xlabel("coluna")
 ax.set_ylabel("linha")
