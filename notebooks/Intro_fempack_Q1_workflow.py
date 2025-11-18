@@ -46,38 +46,38 @@ from fempack.verification import l2_h1_errors
 # com solução exata
 #
 # $$
-# u_{\text{ex}}(x,y) = \sin(\pi x)\,\sin(\pi y).
+# u_{\text{ex}}(x,y) = \sin(2\pi x)\,\sin(2\pi y).
 # $$
 #
 # Então
 #
 # $$
 # f(x,y) = -\Delta u_{\text{ex}}(x,y)
-# = 2\pi^2\,\sin(\pi x)\,\sin(\pi y),
+# = 8\pi^2\,\sin(2\pi x)\,\sin(2\pi y),
 # \qquad
 # g(x,y) = u_{\text{ex}}(x,y).
 # $$
 
 # %%
 def u_exact_2d(x: float, y: float) -> float:
-    """Exact solution u(x, y) = sin(pi x) sin(pi y)."""
-    return float(np.sin(np.pi * x) * np.sin(np.pi * y))
+    """Exact solution u(x, y) = sin(2*pi x) sin(2*pi y)."""
+    return float(np.sin(2 * np.pi * x) * np.sin(2 * np.pi * y))
 
 
 def grad_u_exact_2d(x: float, y: float) -> np.ndarray:
     """Exact gradient of u_exact_2d as a length-2 array.
 
-    ∂u/∂x = π cos(π x) sin(π y)
-    ∂u/∂y = π sin(π x) cos(π y)
+    ∂u/∂x = 2π cos(2π x) sin(2π y)
+    ∂u/∂y = 2π sin(2π x) cos(2π y)
     """
-    du_dx = np.pi * np.cos(np.pi * x) * np.sin(np.pi * y)
-    du_dy = np.pi * np.sin(np.pi * x) * np.cos(np.pi * y)
+    du_dx = 2 * np.pi * np.cos(2 * np.pi * x) * np.sin(2 * np.pi * y)
+    du_dy = 2 * np.pi * np.sin(2 * np.pi * x) * np.cos(2 * np.pi * y)
     return np.array([du_dx, du_dy], dtype=float)
 
 
 def f_rhs_2d(x: float, y: float) -> float:
-    """Right-hand side f(x, y) = 2 π² sin(π x) sin(π y)."""
-    return float(2.0 * np.pi**2 * np.sin(np.pi * x) * np.sin(np.pi * y))
+    """Right-hand side f(x, y) = 8 π² sin(2π x) sin(2π y)."""
+    return float(8.0 * np.pi**2 * np.sin(2 * np.pi * x) * np.sin(2 * np.pi * y))
 
 
 # %% [markdown]
@@ -88,7 +88,7 @@ def f_rhs_2d(x: float, y: float) -> float:
 
 # %%
 # Malha Q1: quadrado unitário dividido em nx × ny quadriláteros
-nx = ny = 4
+nx = ny = 10
 mesh = Mesh.unit_square_quadrilateral(nx, ny)
 
 print("Mesh:")
