@@ -82,6 +82,31 @@ The project uses pre-commit hooks to automatically check code quality before com
 - **trailing-whitespace** and **end-of-file-fixer**: Keep files clean
 
 
+## Documentation
+
+Complete documentation is available as a Jupyter Book, including:
+
+- **Tutorials**: Interactive notebooks demonstrating fempack workflows
+- **Theory**: Mathematical foundations with all formulas and derivations
+- **API Reference**: Auto-generated documentation from source code
+
+To build the documentation locally:
+
+```bash
+# Install documentation dependencies
+pip install -e ".[docs]"
+
+# Build the documentation
+./build-docs.sh
+
+# View in browser
+open docs/_build/html/index.html  # macOS
+# or
+xdg-open docs/_build/html/index.html  # Linux
+```
+
+See `docs/README.md` for more details.
+
 ## License
 
 MIT. Feel free to reuse. Not required, but I would be happy if you let me know that `fempack` was useful for you.
