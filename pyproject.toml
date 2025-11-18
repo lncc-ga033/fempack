@@ -30,6 +30,12 @@ notebook = [
     "matplotlib>=3.5",
     "pandas>=1.5",
 ]
+docs = [
+    "jupyter-book>=0.15.0",
+    "sphinx-autoapi>=3.0.0",
+    "sphinx-book-theme>=1.0.0",
+    "myst-nb>=0.17.0",
+]
 
 [tool.setuptools]
 package-dir = { "" = "src" }

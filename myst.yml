@@ -1,0 +1,62 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+
+project:
+  id: fempack-docs
+  title: fempack Documentation
+  description: A Python finite element library for teaching and learning FEM fundamentals
+  keywords:
+    - fem
+    - finite-element
+    - education
+    - python
+  authors:
+    - name: Diego T. Volpatto
+      email: volpatto@lncc.br
+      affiliation: LNCC - Laboratório Nacional de Computação Científica
+  github: lncc-ga033/fempack
+  license: MIT
+  thumbnail: docs/logos/MARCACOMPLETA_LNCC_HORIZONTAL_FINAL_PNG_azul.png
+  # Table of contents
+  toc:
+    - file: docs/index.md
+    - file: docs/intro.md
+    - title: Tutoriais
+      children:
+        - file: docs/tutorials/index.md
+        - file: docs/tutorials/q1_workflow.md
+    - title: Teoria
+      children:
+        - file: docs/theory/index.md
+        - file: docs/theory/continuous_formulation.md
+        - file: docs/theory/reference_elements.md
+        - file: docs/theory/mappings.md
+        - file: docs/theory/local_matrices.md
+        - file: docs/theory/quadrature.md
+        - file: docs/theory/assembly.md
+        - file: docs/theory/boundary_conditions.md
+        - file: docs/theory/error_analysis.md
+    - title: API
+      children:
+        - file: docs/api/index.md
+        - file: docs/api/reference.md
+        - file: docs/api/elements.md
+        - file: docs/api/mesh.md
+        - file: docs/api/spaces.md
+        - file: docs/api/quadrature.md
+        - file: docs/api/local.md
+        - file: docs/api/assemble.md
+        - file: docs/api/bcs.md
+        - file: docs/api/solvers.md
+        - file: docs/api/verification.md
+
+site:
+  template: book-theme
+  title: fempack Documentation
+  options:
+    logo: docs/logos/MARCACOMPLETA_LNCC_HORIZONTAL_FINAL_PNG_azul.png
+    logo_text: GA033 - Implementação Computacional de Método de Elementos Finitos
+    logo_width: 1000px
+  actions:
+    - title: View on GitHub
+      url: https://github.com/lncc-ga033/fempack
