@@ -17,11 +17,10 @@ cd fempack
 python -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
-# Install in development mode
-pip install -e ".[dev]"
+# Install in development mode with notebook support
+pip install -e ".[dev,notebook]"
 
 # Install pre-commit hooks (recommended for development)
-pip install pre-commit
 pre-commit install
 
 # Run tests
