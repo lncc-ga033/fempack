@@ -1,0 +1,39 @@
+
+name: Tests
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    types: [ "opened", "synchronize", "reopened", "labeled", "unlabeled" ]
+    branches: [ "main" ]
+
+  schedule:
+      # Syntax: "[min] [hour] [day of the month] [month] [day of the week]"
+      # Note: day of the week starts in Sunday (0), ends in Saturday (6)
+    - cron: "0 4 * * 1"  # runs at 04:00 UTC on Mondays
+
+  workflow_dispatch:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Run tests
+        run: |
+          pytest -m "not grading"

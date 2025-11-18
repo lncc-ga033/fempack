@@ -1,0 +1,54 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v6.0.0
+  hooks:
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+
+- repo: https://github.com/srstevenson/nb-clean
+  rev: 4.0.1
+  hooks:
+    - id: nb-clean
+      # Only runs on notebooks/* ipynb files
+      files: ^notebooks/.*\.ipynb$
+      args:
+        - --remove-empty-cells
+        - --preserve-cell-outputs
+        - --preserve-execution-counts
+        - --preserve-cell-metadata
+        - tags
+        - slideshow
+        - --
+
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  # Ruff version.
+  rev: v0.13.0
+  hooks:
+    # Run the linter.
+    - id: ruff
+      args: [ --fix ]
+      exclude: ^notebooks/
+    # Run the formatter.
+    - id: ruff-format
+      exclude: ^notebooks/
+
+- repo: https://github.com/nbQA-dev/nbQA
+  rev: 1.9.1
+  hooks:
+    - id: nbqa-black
+      args: [--quiet]
+      files: ^notebooks/.*\.ipynb$
+    - id: nbqa-ruff
+      args: [--fix, --extend-ignore=E402]
+      files: ^notebooks/.*\.ipynb$
+
+- repo: https://github.com/mwouts/jupytext
+  rev: v1.17.3
+  hooks:
+    - id: jupytext
+      # Only runs on notebooks/* ipynb files
+      files: '^notebooks/.*\.(ipynb|py)$'
+      args: ['--sync']
