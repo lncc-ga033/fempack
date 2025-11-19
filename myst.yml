@@ -57,6 +57,12 @@ site:
     logo: docs/logos/MARCACOMPLETA_LNCC_HORIZONTAL_FINAL_PNG_azul.png
     logo_text: GA033 - Implementação Computacional de Método de Elementos Finitos
     logo_width: 1000px
+    repository_branch: main
+    use_repository_button: true
+    use_edit_page_button: true
+    use_issues_button: true
+    navigation_with_keys: true
+    show_navbar_depth: 2
   actions:
     - title: View on GitHub
       url: https://github.com/lncc-ga033/fempack
