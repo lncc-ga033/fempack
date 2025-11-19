@@ -100,11 +100,11 @@ pip install -e ".[docs]"
 jupyter book start
 ```
 
-After that, you should have an output like that (if everything is OK):
+After that, you should have an output like this (if everything is OK):
 
 <img width="427" height="335" alt="image" src="https://github.com/user-attachments/assets/43e4df4d-f8af-4a05-a2e3-63ef83e3d94c" />
 
-Just open in your browser the local URL that appears for you. In the image below, it would be `http://localhost:3000`, for instance.
+Just open in your browser the local URL that appears for you. In the image above, it would be `http://localhost:3000`, for instance.
 
 See `docs/README.md` for more details.
 
