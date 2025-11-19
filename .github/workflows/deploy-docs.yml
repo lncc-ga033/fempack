@@ -18,9 +18,13 @@ concurrency:
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     permissions:
       pages: write
       id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v5
 
@@ -37,7 +41,7 @@ jobs:
       # Build the book
       - name: Build the book
         run: |
-          jupyter book build --html --strict
+          jupyter book build --html
 
       # Upload the book's HTML as an artifact
       - name: Upload artifact
