@@ -14,7 +14,7 @@ Cada tutorial é um Jupyter notebook executável que você pode:
 
 Antes de começar os tutoriais, certifique-se de ter:
 
-- Python 3.11 ou superior instalado
+- Python 3.10 ou superior instalado
 - O pacote `fempack` instalado (veja {doc}`../index`)
 - Conhecimento básico de:
   - Python e NumPy
