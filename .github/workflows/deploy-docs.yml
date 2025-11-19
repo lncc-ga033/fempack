@@ -18,6 +18,9 @@ concurrency:
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
+    # Required to deploy to GitHub Pages since docs are in a subfolder
+    env:
+      BASE_URL: /${{ github.event.repository.name }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
