@@ -2,11 +2,6 @@
 
 Esta seção contém tutoriais práticos que demonstram o uso do `fempack` para resolver problemas com o método de elementos finitos.
 
-## Tutoriais disponíveis
-
-```{tableofcontents}
-```
-
 ## Como usar estes tutoriais
 
 Cada tutorial é um Jupyter notebook executável que você pode:
@@ -19,7 +14,7 @@ Cada tutorial é um Jupyter notebook executável que você pode:
 
 Antes de começar os tutoriais, certifique-se de ter:
 
-- Python 3.8 ou superior instalado
+- Python 3.11 ou superior instalado
 - O pacote `fempack` instalado (veja {doc}`../index`)
 - Conhecimento básico de:
   - Python e NumPy
