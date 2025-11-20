@@ -392,9 +392,19 @@ def triangle_area(verts: NDArray[np.floating]) -> float:
     ValueError
         If the vertices do not define a valid 2D triangle.
     """
-    raise NotImplementedError(
-        "TODO: implement triangle_area for P1 triangles as part of the assignment."
-    )
+    if verts.shape != (3, 2):
+        raise ValueError(f"verts must have shape (3, 2), got {verts.shape}")
+
+    # Vectors corresponding to two edges
+    v1 = verts[1] - verts[0]
+    v2 = verts[2] - verts[0]
+
+    # Cross product in 2D (z-component of 3D cross product)
+    # Area = 0.5 * (x1*y2 - x2*y1)
+    area = 0.5 * (v1[0] * v2[1] - v1[1] * v2[0])
+
+    return area
+
 
 def p1_gradients(
     verts: NDArray[np.floating],
@@ -422,9 +432,34 @@ def p1_gradients(
     ValueError
         If the triangle is degenerate or has non-positive area.
     """
-    raise NotImplementedError(
-        "TODO: implement p1_gradients for P1 triangles as part of the assignment."
-    )
+    if verts.shape != (3, 2):
+        raise ValueError(f"verts must have shape (3, 2), got {verts.shape}")
+
+    # Compute area (signed)
+    area = triangle_area(verts)
+
+    if area <= 1e-14:
+        raise ValueError(f"Degenerate triangle or negative orientation. Area: {area}")
+
+    # Jacobian matrix J = [x1-x0, x2-x0]
+    #                     [y1-y0, y2-y0]
+    J = np.column_stack((verts[1] - verts[0], verts[2] - verts[0]))
+
+    # Reference gradients (shape 3x2)
+    # phi_0 = 1 - xi - eta  => grad = [-1, -1]
+    # phi_1 = xi            => grad = [ 1,  0]
+    # phi_2 = eta           => grad = [ 0,  1]
+    ref_grads = np.array([[-1.0, -1.0], [1.0, 0.0], [0.0, 1.0]])
+
+    # Physical gradients: grad_phi = J^{-T} * grad_ref_phi
+    # But here ref_grads has gradients as rows.
+    # So we want (J^{-T} @ ref_grads.T).T = ref_grads @ J^{-1}
+
+    J_inv = np.linalg.inv(J)
+    grads = ref_grads @ J_inv
+
+    return grads, area
+
 
 def square_area(verts: NDArray[np.floating]) -> float:
     """Compute the area of a quadrilateral in physical coordinates.
