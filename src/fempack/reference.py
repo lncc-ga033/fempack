@@ -396,6 +396,7 @@ def triangle_area(verts: NDArray[np.floating]) -> float:
         "TODO: implement triangle_area for P1 triangles as part of the assignment."
     )
 
+
 def p1_gradients(
     verts: NDArray[np.floating],
 ) -> tuple[NDArray[np.floating], float]:
@@ -425,6 +426,7 @@ def p1_gradients(
     raise NotImplementedError(
         "TODO: implement p1_gradients for P1 triangles as part of the assignment."
     )
+
 
 def square_area(verts: NDArray[np.floating]) -> float:
     """Compute the area of a quadrilateral in physical coordinates.

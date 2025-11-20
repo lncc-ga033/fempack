@@ -8,6 +8,7 @@ permissions:
   checks: write
   actions: read
   contents: read
+  pull-requests: write
 
 jobs:
   run-autograding-tests:
@@ -17,5 +18,421 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Autograding
-      uses: education/autograding@v1
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install Dependencies
+      run: pip install -e '.[dev]'
+
+    - name: Poisson 2D MMS Converges
+      id: poisson_2d_mms_converges
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Poisson 2D MMS Converges
+        command: pytest -m grading -k test_poisson_2d_mms_converges
+        timeout: 600
+        max-score: 4
+      continue-on-error: true
+
+    - name: L2 H1 Errors Triangle Exact
+      id: l2_h1_errors_triangle_exact
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: L2 H1 Errors Triangle Exact
+        command: pytest -m grading -k test_l2_h1_errors_triangle_exact
+        timeout: 600
+        max-score: 4
+      continue-on-error: true
+
+    - name: L2 H1 Errors Convergence Triangle
+      id: l2_h1_errors_convergence_triangle
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: L2 H1 Errors Convergence Triangle
+        command: pytest -m grading -k test_l2_h1_errors_convergence_triangle
+        timeout: 600
+        max-score: 4
+      continue-on-error: true
+
+    - name: Assemble Stiffness 2D Triangle
+      id: assemble_stiffness_2d_triangle
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Assemble Stiffness 2D Triangle
+        command: pytest -m grading -k test_assemble_stiffness_2d_triangle
+        timeout: 600
+        max-score: 4
+      continue-on-error: true
+
+    - name: Assemble Mass 2D Triangle
+      id: assemble_mass_2d_triangle
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Assemble Mass 2D Triangle
+        command: pytest -m grading -k test_assemble_mass_2d_triangle
+        timeout: 600
+        max-score: 4
+      continue-on-error: true
+
+    - name: Assemble Mass 2D Sum
+      id: assemble_mass_2d_sum
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Assemble Mass 2D Sum
+        command: pytest -m grading -k test_assemble_mass_2d_sum
+        timeout: 600
+        max-score: 4
+      continue-on-error: true
+
+    - name: Assemble Load 2D Constant
+      id: assemble_load_2d_constant
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Assemble Load 2D Constant
+        command: pytest -m grading -k test_assemble_load_2d_constant
+        timeout: 600
+        max-score: 4
+      continue-on-error: true
+
+    - name: Assemble Load 2D Variable
+      id: assemble_load_2d_variable
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Assemble Load 2D Variable
+        command: pytest -m grading -k test_assemble_load_2d_variable
+        timeout: 600
+        max-score: 4
+      continue-on-error: true
+
+    - name: Assemble Consistency Triangle vs Quad
+      id: assemble_consistency_triangle_vs_quad
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Assemble Consistency Triangle vs Quad
+        command: pytest -m grading -k test_assemble_consistency_triangle_vs_quad
+        timeout: 600
+        max-score: 4
+      continue-on-error: true
+
+    - name: Assemble Refinement Convergence
+      id: assemble_refinement_convergence
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Assemble Refinement Convergence
+        command: pytest -m grading -k test_assemble_refinement_convergence
+        timeout: 600
+        max-score: 4
+      continue-on-error: true
+
+    - name: Local Stiffness P1 Triangle
+      id: local_stiffness_p1_triangle
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Local Stiffness P1 Triangle
+        command: pytest -m grading -k test_local_stiffness_p1_triangle
+        timeout: 600
+        max-score: 4
+      continue-on-error: true
+
+    - name: Local Stiffness P1 Triangle Positive Definite
+      id: local_stiffness_p1_triangle_positive_definite
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Local Stiffness P1 Triangle Positive Definite
+        command: pytest -m grading -k test_local_stiffness_p1_triangle_positive_definite
+        timeout: 600
+        max-score: 4
+      continue-on-error: true
+
+    - name: Local Mass P1 Triangle
+      id: local_mass_p1_triangle
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Local Mass P1 Triangle
+        command: pytest -m grading -k test_local_mass_p1_triangle
+        timeout: 600
+        max-score: 4
+      continue-on-error: true
+
+    - name: Local Mass P1 Triangle Sum
+      id: local_mass_p1_triangle_sum
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Local Mass P1 Triangle Sum
+        command: pytest -m grading -k test_local_mass_p1_triangle_sum
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: Local Load P1 Triangle
+      id: local_load_p1_triangle
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Local Load P1 Triangle
+        command: pytest -m grading -k test_local_load_p1_triangle
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: Local Load P1 Triangle Variable
+      id: local_load_p1_triangle_variable
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Local Load P1 Triangle Variable
+        command: pytest -m grading -k test_local_load_p1_triangle_variable
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: Local Matrices Symmetry
+      id: local_matrices_symmetry
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Local Matrices Symmetry
+        command: pytest -m grading -k test_local_matrices_symmetry
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: Triangle Area Unit
+      id: triangle_area_unit
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Triangle Area Unit
+        command: pytest -m grading -k test_triangle_area_unit
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: Triangle Area General
+      id: triangle_area_general
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Triangle Area General
+        command: pytest -m grading -k test_triangle_area_general
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: Triangle Area Larger
+      id: triangle_area_larger
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Triangle Area Larger
+        command: pytest -m grading -k test_triangle_area_larger
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: Triangle Area Invalid Shape
+      id: triangle_area_invalid_shape
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Triangle Area Invalid Shape
+        command: pytest -m grading -k test_triangle_area_invalid_shape
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: Triangle Area Negative Orientation
+      id: triangle_area_negative_orientation
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Triangle Area Negative Orientation
+        command: pytest -m grading -k test_triangle_area_negative_orientation
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: P1 Gradients Unit Triangle
+      id: p1_gradients_unit_triangle
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: P1 Gradients Unit Triangle
+        command: pytest -m grading -k test_p1_gradients_unit_triangle
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: P1 Gradients Sum To Zero
+      id: p1_gradients_sum_to_zero
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: P1 Gradients Sum To Zero
+        command: pytest -m grading -k test_p1_gradients_sum_to_zero
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: P1 Gradients General Triangle
+      id: p1_gradients_general_triangle
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: P1 Gradients General Triangle
+        command: pytest -m grading -k test_p1_gradients_general_triangle
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: P1 Gradients Invalid Shape
+      id: p1_gradients_invalid_shape
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: P1 Gradients Invalid Shape
+        command: pytest -m grading -k test_p1_gradients_invalid_shape
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: P1 Gradients Degenerate Triangle
+      id: p1_gradients_degenerate_triangle
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: P1 Gradients Degenerate Triangle
+        command: pytest -m grading -k test_p1_gradients_degenerate_triangle
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: P1 Gradients Negative Orientation
+      id: p1_gradients_negative_orientation
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: P1 Gradients Negative Orientation
+        command: pytest -m grading -k test_p1_gradients_negative_orientation
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: P1 Gradients Constant On Affine Functions
+      id: p1_gradients_constant_on_affine_functions
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: P1 Gradients Constant On Affine Functions
+        command: pytest -m grading -k test_p1_gradients_constant_on_affine_functions
+        timeout: 600
+        max-score: 3
+      continue-on-error: true
+
+    - name: Autograding Reporter
+      id: autograding-reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      if: always()
+      continue-on-error: true
+      env:
+        POISSON_2D_MMS_CONVERGES_RESULTS: "${{steps.poisson_2d_mms_converges.outputs.result}}"
+        L2_H1_ERRORS_TRIANGLE_EXACT_RESULTS: "${{steps.l2_h1_errors_triangle_exact.outputs.result}}"
+        L2_H1_ERRORS_CONVERGENCE_TRIANGLE_RESULTS: "${{steps.l2_h1_errors_convergence_triangle.outputs.result}}"
+        ASSEMBLE_STIFFNESS_2D_TRIANGLE_RESULTS: "${{steps.assemble_stiffness_2d_triangle.outputs.result}}"
+        ASSEMBLE_MASS_2D_TRIANGLE_RESULTS: "${{steps.assemble_mass_2d_triangle.outputs.result}}"
+        ASSEMBLE_MASS_2D_SUM_RESULTS: "${{steps.assemble_mass_2d_sum.outputs.result}}"
+        ASSEMBLE_LOAD_2D_CONSTANT_RESULTS: "${{steps.assemble_load_2d_constant.outputs.result}}"
+        ASSEMBLE_LOAD_2D_VARIABLE_RESULTS: "${{steps.assemble_load_2d_variable.outputs.result}}"
+        ASSEMBLE_CONSISTENCY_TRIANGLE_VS_QUAD_RESULTS: "${{steps.assemble_consistency_triangle_vs_quad.outputs.result}}"
+        ASSEMBLE_REFINEMENT_CONVERGENCE_RESULTS: "${{steps.assemble_refinement_convergence.outputs.result}}"
+        LOCAL_STIFFNESS_P1_TRIANGLE_RESULTS: "${{steps.local_stiffness_p1_triangle.outputs.result}}"
+        LOCAL_STIFFNESS_P1_TRIANGLE_POSITIVE_DEFINITE_RESULTS: "${{steps.local_stiffness_p1_triangle_positive_definite.outputs.result}}"
+        LOCAL_MASS_P1_TRIANGLE_RESULTS: "${{steps.local_mass_p1_triangle.outputs.result}}"
+        LOCAL_MASS_P1_TRIANGLE_SUM_RESULTS: "${{steps.local_mass_p1_triangle_sum.outputs.result}}"
+        LOCAL_LOAD_P1_TRIANGLE_RESULTS: "${{steps.local_load_p1_triangle.outputs.result}}"
+        LOCAL_LOAD_P1_TRIANGLE_VARIABLE_RESULTS: "${{steps.local_load_p1_triangle_variable.outputs.result}}"
+        LOCAL_MATRICES_SYMMETRY_RESULTS: "${{steps.local_matrices_symmetry.outputs.result}}"
+        TRIANGLE_AREA_UNIT_RESULTS: "${{steps.triangle_area_unit.outputs.result}}"
+        TRIANGLE_AREA_GENERAL_RESULTS: "${{steps.triangle_area_general.outputs.result}}"
+        TRIANGLE_AREA_LARGER_RESULTS: "${{steps.triangle_area_larger.outputs.result}}"
+        TRIANGLE_AREA_INVALID_SHAPE_RESULTS: "${{steps.triangle_area_invalid_shape.outputs.result}}"
+        TRIANGLE_AREA_NEGATIVE_ORIENTATION_RESULTS: "${{steps.triangle_area_negative_orientation.outputs.result}}"
+        P1_GRADIENTS_UNIT_TRIANGLE_RESULTS: "${{steps.p1_gradients_unit_triangle.outputs.result}}"
+        P1_GRADIENTS_SUM_TO_ZERO_RESULTS: "${{steps.p1_gradients_sum_to_zero.outputs.result}}"
+        P1_GRADIENTS_GENERAL_TRIANGLE_RESULTS: "${{steps.p1_gradients_general_triangle.outputs.result}}"
+        P1_GRADIENTS_INVALID_SHAPE_RESULTS: "${{steps.p1_gradients_invalid_shape.outputs.result}}"
+        P1_GRADIENTS_DEGENERATE_TRIANGLE_RESULTS: "${{steps.p1_gradients_degenerate_triangle.outputs.result}}"
+        P1_GRADIENTS_NEGATIVE_ORIENTATION_RESULTS: "${{steps.p1_gradients_negative_orientation.outputs.result}}"
+        P1_GRADIENTS_CONSTANT_ON_AFFINE_FUNCTIONS_RESULTS: "${{steps.p1_gradients_constant_on_affine_functions.outputs.result}}"
+      with:
+        runners: 'poisson_2d_mms_converges,l2_h1_errors_triangle_exact,l2_h1_errors_convergence_triangle,assemble_stiffness_2d_triangle,assemble_mass_2d_triangle,assemble_mass_2d_sum,assemble_load_2d_constant,assemble_load_2d_variable,assemble_consistency_triangle_vs_quad,assemble_refinement_convergence,local_stiffness_p1_triangle,local_stiffness_p1_triangle_positive_definite,local_mass_p1_triangle,local_mass_p1_triangle_sum,local_load_p1_triangle,local_load_p1_triangle_variable,local_matrices_symmetry,triangle_area_unit,triangle_area_general,triangle_area_larger,triangle_area_invalid_shape,triangle_area_negative_orientation,p1_gradients_unit_triangle,p1_gradients_sum_to_zero,p1_gradients_general_triangle,p1_gradients_invalid_shape,p1_gradients_degenerate_triangle,p1_gradients_negative_orientation,p1_gradients_constant_on_affine_functions'
+
+    - name: Post Autograding Results
+      uses: actions/github-script@v6
+      if: always()
+      env:
+        POISSON_2D_MMS_CONVERGES_RESULTS: "${{steps.poisson_2d_mms_converges.outputs.result}}"
+        L2_H1_ERRORS_TRIANGLE_EXACT_RESULTS: "${{steps.l2_h1_errors_triangle_exact.outputs.result}}"
+        L2_H1_ERRORS_CONVERGENCE_TRIANGLE_RESULTS: "${{steps.l2_h1_errors_convergence_triangle.outputs.result}}"
+        ASSEMBLE_STIFFNESS_2D_TRIANGLE_RESULTS: "${{steps.assemble_stiffness_2d_triangle.outputs.result}}"
+        ASSEMBLE_MASS_2D_TRIANGLE_RESULTS: "${{steps.assemble_mass_2d_triangle.outputs.result}}"
+        ASSEMBLE_MASS_2D_SUM_RESULTS: "${{steps.assemble_mass_2d_sum.outputs.result}}"
+        ASSEMBLE_LOAD_2D_CONSTANT_RESULTS: "${{steps.assemble_load_2d_constant.outputs.result}}"
+        ASSEMBLE_LOAD_2D_VARIABLE_RESULTS: "${{steps.assemble_load_2d_variable.outputs.result}}"
+        ASSEMBLE_CONSISTENCY_TRIANGLE_VS_QUAD_RESULTS: "${{steps.assemble_consistency_triangle_vs_quad.outputs.result}}"
+        ASSEMBLE_REFINEMENT_CONVERGENCE_RESULTS: "${{steps.assemble_refinement_convergence.outputs.result}}"
+        LOCAL_STIFFNESS_P1_TRIANGLE_RESULTS: "${{steps.local_stiffness_p1_triangle.outputs.result}}"
+        LOCAL_STIFFNESS_P1_TRIANGLE_POSITIVE_DEFINITE_RESULTS: "${{steps.local_stiffness_p1_triangle_positive_definite.outputs.result}}"
+        LOCAL_MASS_P1_TRIANGLE_RESULTS: "${{steps.local_mass_p1_triangle.outputs.result}}"
+        LOCAL_MASS_P1_TRIANGLE_SUM_RESULTS: "${{steps.local_mass_p1_triangle_sum.outputs.result}}"
+        LOCAL_LOAD_P1_TRIANGLE_RESULTS: "${{steps.local_load_p1_triangle.outputs.result}}"
+        LOCAL_LOAD_P1_TRIANGLE_VARIABLE_RESULTS: "${{steps.local_load_p1_triangle_variable.outputs.result}}"
+        LOCAL_MATRICES_SYMMETRY_RESULTS: "${{steps.local_matrices_symmetry.outputs.result}}"
+        TRIANGLE_AREA_UNIT_RESULTS: "${{steps.triangle_area_unit.outputs.result}}"
+        TRIANGLE_AREA_GENERAL_RESULTS: "${{steps.triangle_area_general.outputs.result}}"
+        TRIANGLE_AREA_LARGER_RESULTS: "${{steps.triangle_area_larger.outputs.result}}"
+        TRIANGLE_AREA_INVALID_SHAPE_RESULTS: "${{steps.triangle_area_invalid_shape.outputs.result}}"
+        TRIANGLE_AREA_NEGATIVE_ORIENTATION_RESULTS: "${{steps.triangle_area_negative_orientation.outputs.result}}"
+        P1_GRADIENTS_UNIT_TRIANGLE_RESULTS: "${{steps.p1_gradients_unit_triangle.outputs.result}}"
+        P1_GRADIENTS_SUM_TO_ZERO_RESULTS: "${{steps.p1_gradients_sum_to_zero.outputs.result}}"
+        P1_GRADIENTS_GENERAL_TRIANGLE_RESULTS: "${{steps.p1_gradients_general_triangle.outputs.result}}"
+        P1_GRADIENTS_INVALID_SHAPE_RESULTS: "${{steps.p1_gradients_invalid_shape.outputs.result}}"
+        P1_GRADIENTS_DEGENERATE_TRIANGLE_RESULTS: "${{steps.p1_gradients_degenerate_triangle.outputs.result}}"
+        P1_GRADIENTS_NEGATIVE_ORIENTATION_RESULTS: "${{steps.p1_gradients_negative_orientation.outputs.result}}"
+        P1_GRADIENTS_CONSTANT_ON_AFFINE_FUNCTIONS_RESULTS: "${{steps.p1_gradients_constant_on_affine_functions.outputs.result}}"
+      with:
+        script: |
+          const results = process.env;
+          let totalPoints = 0;
+          let maxPoints = 0;
+
+          for (const key in results) {
+            if (key.endsWith('_RESULTS')) {
+              const result = results[key];
+              if (!result) continue;
+
+              try {
+                const decoded = Buffer.from(result, 'base64').toString('utf-8');
+                const json = JSON.parse(decoded);
+
+                if (json.max_score) {
+                  maxPoints += json.max_score;
+                }
+
+                if (json.tests && Array.isArray(json.tests)) {
+                  json.tests.forEach(test => {
+                    if (test.score) {
+                      totalPoints += test.score;
+                    }
+                  });
+                }
+              } catch (e) {
+                console.log(`Error parsing ${key}: ${e.message}`);
+              }
+            }
+          }
+
+          // Find the PR associated with this push
+          const prs = await github.rest.pulls.list({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            head: `${context.repo.owner}:${context.ref.replace('refs/heads/', '')}`,
+            state: 'open'
+          });
+
+          if (prs.data.length > 0) {
+            const pr = prs.data[0];
+            await github.rest.issues.createComment({
+              issue_number: pr.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `Autograding points: ${totalPoints}/${maxPoints}`
+            });
+          }
