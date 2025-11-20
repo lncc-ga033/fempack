@@ -36,6 +36,9 @@ jobs:
       with:
         python-version: '3.10'
 
+    - name: Install Dependencies
+      run: pip install -e '.[dev]'
+
 """
 
 runner_ids = []
@@ -57,7 +60,6 @@ for test in tests:
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: {test_name}
-        setup-command: {setup_cmd}
         command: {run_cmd}
         timeout: {timeout}
         max-score: {points}
@@ -86,8 +88,11 @@ yaml_content += """
       if: always()
       with:
         script: |
-          const points = "${{ steps.autograding-reporter.outputs.points }}" || "0";
-          const availablePoints = "${{ steps.autograding-reporter.outputs.available-points }}" || "0";
+          const points = "${{ steps.autograding-reporter.outputs.points }}";
+          const availablePoints = "${{ steps.autograding-reporter.outputs.available-points }}";
+
+          const finalPoints = (points && points !== "undefined") ? points : "0";
+          const finalAvailablePoints = (availablePoints && availablePoints !== "undefined") ? availablePoints : "0";
 
           // Find the PR associated with this push
           const prs = await github.rest.pulls.list({
@@ -103,7 +108,7 @@ yaml_content += """
               issue_number: pr.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `Autograding points: ${points}/${availablePoints}`
+              body: `Autograding points: ${finalPoints}/${finalAvailablePoints}`
             });
           }
 """
