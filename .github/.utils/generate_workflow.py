@@ -64,7 +64,8 @@ for test in tests:
       continue-on-error: true
 
 """
-    env_vars[f"{test_id.upper()}_RESULTS"] = "${{steps." + test_id + ".outputs.result}}"
+    env_key = test_id.replace("-", "_").upper()
+    env_vars[f"{env_key}_RESULTS"] = "${{steps." + test_id + ".outputs.result}}"
 
 yaml_content += """    - name: Autograding Reporter
       id: autograding-reporter
@@ -85,8 +86,8 @@ yaml_content += """
       if: always()
       with:
         script: |
-          const points = "${{ steps.autograding-reporter.outputs.points }}"
-          const availablePoints = "${{ steps.autograding-reporter.outputs.available-points }}"
+          const points = "${{ steps.autograding-reporter.outputs.points }}" || "0";
+          const availablePoints = "${{ steps.autograding-reporter.outputs.available-points }}" || "0";
 
           // Find the PR associated with this push
           const prs = await github.rest.pulls.list({

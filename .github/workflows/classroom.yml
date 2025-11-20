@@ -347,35 +347,35 @@ jobs:
       uses: classroom-resources/autograding-grading-reporter@v1
       if: always()
       env:
-        POISSON-2D-MMS-CONVERGES_RESULTS: "${{steps.poisson-2d-mms-converges.outputs.result}}"
-        L2-H1-ERRORS-TRIANGLE-EXACT_RESULTS: "${{steps.l2-h1-errors-triangle-exact.outputs.result}}"
-        L2-H1-ERRORS-CONVERGENCE-TRIANGLE_RESULTS: "${{steps.l2-h1-errors-convergence-triangle.outputs.result}}"
-        ASSEMBLE-STIFFNESS-2D-TRIANGLE_RESULTS: "${{steps.assemble-stiffness-2d-triangle.outputs.result}}"
-        ASSEMBLE-MASS-2D-TRIANGLE_RESULTS: "${{steps.assemble-mass-2d-triangle.outputs.result}}"
-        ASSEMBLE-MASS-2D-SUM_RESULTS: "${{steps.assemble-mass-2d-sum.outputs.result}}"
-        ASSEMBLE-LOAD-2D-CONSTANT_RESULTS: "${{steps.assemble-load-2d-constant.outputs.result}}"
-        ASSEMBLE-LOAD-2D-VARIABLE_RESULTS: "${{steps.assemble-load-2d-variable.outputs.result}}"
-        ASSEMBLE-CONSISTENCY-TRIANGLE-VS-QUAD_RESULTS: "${{steps.assemble-consistency-triangle-vs-quad.outputs.result}}"
-        ASSEMBLE-REFINEMENT-CONVERGENCE_RESULTS: "${{steps.assemble-refinement-convergence.outputs.result}}"
-        LOCAL-STIFFNESS-P1-TRIANGLE_RESULTS: "${{steps.local-stiffness-p1-triangle.outputs.result}}"
-        LOCAL-STIFFNESS-P1-TRIANGLE-POSITIVE-DEFINITE_RESULTS: "${{steps.local-stiffness-p1-triangle-positive-definite.outputs.result}}"
-        LOCAL-MASS-P1-TRIANGLE_RESULTS: "${{steps.local-mass-p1-triangle.outputs.result}}"
-        LOCAL-MASS-P1-TRIANGLE-SUM_RESULTS: "${{steps.local-mass-p1-triangle-sum.outputs.result}}"
-        LOCAL-LOAD-P1-TRIANGLE_RESULTS: "${{steps.local-load-p1-triangle.outputs.result}}"
-        LOCAL-LOAD-P1-TRIANGLE-VARIABLE_RESULTS: "${{steps.local-load-p1-triangle-variable.outputs.result}}"
-        LOCAL-MATRICES-SYMMETRY_RESULTS: "${{steps.local-matrices-symmetry.outputs.result}}"
-        TRIANGLE-AREA-UNIT_RESULTS: "${{steps.triangle-area-unit.outputs.result}}"
-        TRIANGLE-AREA-GENERAL_RESULTS: "${{steps.triangle-area-general.outputs.result}}"
-        TRIANGLE-AREA-LARGER_RESULTS: "${{steps.triangle-area-larger.outputs.result}}"
-        TRIANGLE-AREA-INVALID-SHAPE_RESULTS: "${{steps.triangle-area-invalid-shape.outputs.result}}"
-        TRIANGLE-AREA-NEGATIVE-ORIENTATION_RESULTS: "${{steps.triangle-area-negative-orientation.outputs.result}}"
-        P1-GRADIENTS-UNIT-TRIANGLE_RESULTS: "${{steps.p1-gradients-unit-triangle.outputs.result}}"
-        P1-GRADIENTS-SUM-TO-ZERO_RESULTS: "${{steps.p1-gradients-sum-to-zero.outputs.result}}"
-        P1-GRADIENTS-GENERAL-TRIANGLE_RESULTS: "${{steps.p1-gradients-general-triangle.outputs.result}}"
-        P1-GRADIENTS-INVALID-SHAPE_RESULTS: "${{steps.p1-gradients-invalid-shape.outputs.result}}"
-        P1-GRADIENTS-DEGENERATE-TRIANGLE_RESULTS: "${{steps.p1-gradients-degenerate-triangle.outputs.result}}"
-        P1-GRADIENTS-NEGATIVE-ORIENTATION_RESULTS: "${{steps.p1-gradients-negative-orientation.outputs.result}}"
-        P1-GRADIENTS-CONSTANT-ON-AFFINE-FUNCTIONS_RESULTS: "${{steps.p1-gradients-constant-on-affine-functions.outputs.result}}"
+        POISSON_2D_MMS_CONVERGES_RESULTS: "${{steps.poisson-2d-mms-converges.outputs.result}}"
+        L2_H1_ERRORS_TRIANGLE_EXACT_RESULTS: "${{steps.l2-h1-errors-triangle-exact.outputs.result}}"
+        L2_H1_ERRORS_CONVERGENCE_TRIANGLE_RESULTS: "${{steps.l2-h1-errors-convergence-triangle.outputs.result}}"
+        ASSEMBLE_STIFFNESS_2D_TRIANGLE_RESULTS: "${{steps.assemble-stiffness-2d-triangle.outputs.result}}"
+        ASSEMBLE_MASS_2D_TRIANGLE_RESULTS: "${{steps.assemble-mass-2d-triangle.outputs.result}}"
+        ASSEMBLE_MASS_2D_SUM_RESULTS: "${{steps.assemble-mass-2d-sum.outputs.result}}"
+        ASSEMBLE_LOAD_2D_CONSTANT_RESULTS: "${{steps.assemble-load-2d-constant.outputs.result}}"
+        ASSEMBLE_LOAD_2D_VARIABLE_RESULTS: "${{steps.assemble-load-2d-variable.outputs.result}}"
+        ASSEMBLE_CONSISTENCY_TRIANGLE_VS_QUAD_RESULTS: "${{steps.assemble-consistency-triangle-vs-quad.outputs.result}}"
+        ASSEMBLE_REFINEMENT_CONVERGENCE_RESULTS: "${{steps.assemble-refinement-convergence.outputs.result}}"
+        LOCAL_STIFFNESS_P1_TRIANGLE_RESULTS: "${{steps.local-stiffness-p1-triangle.outputs.result}}"
+        LOCAL_STIFFNESS_P1_TRIANGLE_POSITIVE_DEFINITE_RESULTS: "${{steps.local-stiffness-p1-triangle-positive-definite.outputs.result}}"
+        LOCAL_MASS_P1_TRIANGLE_RESULTS: "${{steps.local-mass-p1-triangle.outputs.result}}"
+        LOCAL_MASS_P1_TRIANGLE_SUM_RESULTS: "${{steps.local-mass-p1-triangle-sum.outputs.result}}"
+        LOCAL_LOAD_P1_TRIANGLE_RESULTS: "${{steps.local-load-p1-triangle.outputs.result}}"
+        LOCAL_LOAD_P1_TRIANGLE_VARIABLE_RESULTS: "${{steps.local-load-p1-triangle-variable.outputs.result}}"
+        LOCAL_MATRICES_SYMMETRY_RESULTS: "${{steps.local-matrices-symmetry.outputs.result}}"
+        TRIANGLE_AREA_UNIT_RESULTS: "${{steps.triangle-area-unit.outputs.result}}"
+        TRIANGLE_AREA_GENERAL_RESULTS: "${{steps.triangle-area-general.outputs.result}}"
+        TRIANGLE_AREA_LARGER_RESULTS: "${{steps.triangle-area-larger.outputs.result}}"
+        TRIANGLE_AREA_INVALID_SHAPE_RESULTS: "${{steps.triangle-area-invalid-shape.outputs.result}}"
+        TRIANGLE_AREA_NEGATIVE_ORIENTATION_RESULTS: "${{steps.triangle-area-negative-orientation.outputs.result}}"
+        P1_GRADIENTS_UNIT_TRIANGLE_RESULTS: "${{steps.p1-gradients-unit-triangle.outputs.result}}"
+        P1_GRADIENTS_SUM_TO_ZERO_RESULTS: "${{steps.p1-gradients-sum-to-zero.outputs.result}}"
+        P1_GRADIENTS_GENERAL_TRIANGLE_RESULTS: "${{steps.p1-gradients-general-triangle.outputs.result}}"
+        P1_GRADIENTS_INVALID_SHAPE_RESULTS: "${{steps.p1-gradients-invalid-shape.outputs.result}}"
+        P1_GRADIENTS_DEGENERATE_TRIANGLE_RESULTS: "${{steps.p1-gradients-degenerate-triangle.outputs.result}}"
+        P1_GRADIENTS_NEGATIVE_ORIENTATION_RESULTS: "${{steps.p1-gradients-negative-orientation.outputs.result}}"
+        P1_GRADIENTS_CONSTANT_ON_AFFINE_FUNCTIONS_RESULTS: "${{steps.p1-gradients-constant-on-affine-functions.outputs.result}}"
       with:
         runners: poisson-2d-mms-converges,l2-h1-errors-triangle-exact,l2-h1-errors-convergence-triangle,assemble-stiffness-2d-triangle,assemble-mass-2d-triangle,assemble-mass-2d-sum,assemble-load-2d-constant,assemble-load-2d-variable,assemble-consistency-triangle-vs-quad,assemble-refinement-convergence,local-stiffness-p1-triangle,local-stiffness-p1-triangle-positive-definite,local-mass-p1-triangle,local-mass-p1-triangle-sum,local-load-p1-triangle,local-load-p1-triangle-variable,local-matrices-symmetry,triangle-area-unit,triangle-area-general,triangle-area-larger,triangle-area-invalid-shape,triangle-area-negative-orientation,p1-gradients-unit-triangle,p1-gradients-sum-to-zero,p1-gradients-general-triangle,p1-gradients-invalid-shape,p1-gradients-degenerate-triangle,p1-gradients-negative-orientation,p1-gradients-constant-on-affine-functions
 
@@ -384,8 +384,8 @@ jobs:
       if: always()
       with:
         script: |
-          const points = "${{ steps.autograding-reporter.outputs.points }}"
-          const availablePoints = "${{ steps.autograding-reporter.outputs.available-points }}"
+          const points = "${{ steps.autograding-reporter.outputs.points }}" || "0";
+          const availablePoints = "${{ steps.autograding-reporter.outputs.available-points }}" || "0";
 
           // Find the PR associated with this push
           const prs = await github.rest.pulls.list({
