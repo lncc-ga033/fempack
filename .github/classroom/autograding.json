@@ -2,7 +2,7 @@
   "tests": [
     {
       "name": "Poisson 2D MMS Converges",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_poisson_2d_mms_converges",
       "input": "",
       "output": "",
@@ -12,7 +12,7 @@
     },
     {
       "name": "L2 H1 Errors Triangle Exact",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_l2_h1_errors_triangle_exact",
       "input": "",
       "output": "",
@@ -22,7 +22,7 @@
     },
     {
       "name": "L2 H1 Errors Convergence Triangle",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_l2_h1_errors_convergence_triangle",
       "input": "",
       "output": "",
@@ -32,7 +32,7 @@
     },
     {
       "name": "Assemble Stiffness 2D Triangle",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_assemble_stiffness_2d_triangle",
       "input": "",
       "output": "",
@@ -42,7 +42,7 @@
     },
     {
       "name": "Assemble Mass 2D Triangle",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_assemble_mass_2d_triangle",
       "input": "",
       "output": "",
@@ -52,7 +52,7 @@
     },
     {
       "name": "Assemble Mass 2D Sum",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_assemble_mass_2d_sum",
       "input": "",
       "output": "",
@@ -62,7 +62,7 @@
     },
     {
       "name": "Assemble Load 2D Constant",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_assemble_load_2d_constant",
       "input": "",
       "output": "",
@@ -72,7 +72,7 @@
     },
     {
       "name": "Assemble Load 2D Variable",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_assemble_load_2d_variable",
       "input": "",
       "output": "",
@@ -82,7 +82,7 @@
     },
     {
       "name": "Assemble Consistency Triangle vs Quad",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_assemble_consistency_triangle_vs_quad",
       "input": "",
       "output": "",
@@ -92,7 +92,7 @@
     },
     {
       "name": "Assemble Refinement Convergence",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_assemble_refinement_convergence",
       "input": "",
       "output": "",
@@ -102,7 +102,7 @@
     },
     {
       "name": "Local Stiffness P1 Triangle",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_local_stiffness_p1_triangle",
       "input": "",
       "output": "",
@@ -112,7 +112,7 @@
     },
     {
       "name": "Local Stiffness P1 Triangle Positive Definite",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_local_stiffness_p1_triangle_positive_definite",
       "input": "",
       "output": "",
@@ -122,7 +122,7 @@
     },
     {
       "name": "Local Mass P1 Triangle",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_local_mass_p1_triangle",
       "input": "",
       "output": "",
@@ -132,7 +132,7 @@
     },
     {
       "name": "Local Mass P1 Triangle Sum",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_local_mass_p1_triangle_sum",
       "input": "",
       "output": "",
@@ -142,7 +142,7 @@
     },
     {
       "name": "Local Load P1 Triangle",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_local_load_p1_triangle",
       "input": "",
       "output": "",
@@ -152,7 +152,7 @@
     },
     {
       "name": "Local Load P1 Triangle Variable",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_local_load_p1_triangle_variable",
       "input": "",
       "output": "",
@@ -162,7 +162,7 @@
     },
     {
       "name": "Local Matrices Symmetry",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_local_matrices_symmetry",
       "input": "",
       "output": "",
@@ -172,7 +172,7 @@
     },
     {
       "name": "Triangle Area Unit",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_triangle_area_unit",
       "input": "",
       "output": "",
@@ -182,7 +182,7 @@
     },
     {
       "name": "Triangle Area General",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_triangle_area_general",
       "input": "",
       "output": "",
@@ -192,7 +192,7 @@
     },
     {
       "name": "Triangle Area Larger",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_triangle_area_larger",
       "input": "",
       "output": "",
@@ -202,7 +202,7 @@
     },
     {
       "name": "Triangle Area Invalid Shape",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_triangle_area_invalid_shape",
       "input": "",
       "output": "",
@@ -212,7 +212,7 @@
     },
     {
       "name": "Triangle Area Negative Orientation",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_triangle_area_negative_orientation",
       "input": "",
       "output": "",
@@ -222,7 +222,7 @@
     },
     {
       "name": "P1 Gradients Unit Triangle",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_p1_gradients_unit_triangle",
       "input": "",
       "output": "",
@@ -232,7 +232,7 @@
     },
     {
       "name": "P1 Gradients Sum To Zero",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_p1_gradients_sum_to_zero",
       "input": "",
       "output": "",
@@ -242,7 +242,7 @@
     },
     {
       "name": "P1 Gradients General Triangle",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_p1_gradients_general_triangle",
       "input": "",
       "output": "",
@@ -252,7 +252,7 @@
     },
     {
       "name": "P1 Gradients Invalid Shape",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_p1_gradients_invalid_shape",
       "input": "",
       "output": "",
@@ -262,7 +262,7 @@
     },
     {
       "name": "P1 Gradients Degenerate Triangle",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_p1_gradients_degenerate_triangle",
       "input": "",
       "output": "",
@@ -272,7 +272,7 @@
     },
     {
       "name": "P1 Gradients Negative Orientation",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_p1_gradients_negative_orientation",
       "input": "",
       "output": "",
@@ -282,7 +282,7 @@
     },
     {
       "name": "P1 Gradients Constant On Affine Functions",
-      "setup": "pip install -e .",
+      "setup": "pip install -e '.[dev]'",
       "run": "pytest -m grading -k test_p1_gradients_constant_on_affine_functions",
       "input": "",
       "output": "",
