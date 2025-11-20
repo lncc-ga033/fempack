@@ -32,6 +32,7 @@ jobs:
         command: pytest -m grading -k test_poisson_2d_mms_converges
         timeout: 600
         max-score: 4
+      continue-on-error: true
 
     - name: L2 H1 Errors Triangle Exact
       id: l2-h1-errors-triangle-exact
@@ -42,6 +43,7 @@ jobs:
         command: pytest -m grading -k test_l2_h1_errors_triangle_exact
         timeout: 600
         max-score: 4
+      continue-on-error: true
 
     - name: L2 H1 Errors Convergence Triangle
       id: l2-h1-errors-convergence-triangle
@@ -52,6 +54,7 @@ jobs:
         command: pytest -m grading -k test_l2_h1_errors_convergence_triangle
         timeout: 600
         max-score: 4
+      continue-on-error: true
 
     - name: Assemble Stiffness 2D Triangle
       id: assemble-stiffness-2d-triangle
@@ -62,6 +65,7 @@ jobs:
         command: pytest -m grading -k test_assemble_stiffness_2d_triangle
         timeout: 600
         max-score: 4
+      continue-on-error: true
 
     - name: Assemble Mass 2D Triangle
       id: assemble-mass-2d-triangle
@@ -72,6 +76,7 @@ jobs:
         command: pytest -m grading -k test_assemble_mass_2d_triangle
         timeout: 600
         max-score: 4
+      continue-on-error: true
 
     - name: Assemble Mass 2D Sum
       id: assemble-mass-2d-sum
@@ -82,6 +87,7 @@ jobs:
         command: pytest -m grading -k test_assemble_mass_2d_sum
         timeout: 600
         max-score: 4
+      continue-on-error: true
 
     - name: Assemble Load 2D Constant
       id: assemble-load-2d-constant
@@ -92,6 +98,7 @@ jobs:
         command: pytest -m grading -k test_assemble_load_2d_constant
         timeout: 600
         max-score: 4
+      continue-on-error: true
 
     - name: Assemble Load 2D Variable
       id: assemble-load-2d-variable
@@ -102,6 +109,7 @@ jobs:
         command: pytest -m grading -k test_assemble_load_2d_variable
         timeout: 600
         max-score: 4
+      continue-on-error: true
 
     - name: Assemble Consistency Triangle vs Quad
       id: assemble-consistency-triangle-vs-quad
@@ -112,6 +120,7 @@ jobs:
         command: pytest -m grading -k test_assemble_consistency_triangle_vs_quad
         timeout: 600
         max-score: 4
+      continue-on-error: true
 
     - name: Assemble Refinement Convergence
       id: assemble-refinement-convergence
@@ -122,6 +131,7 @@ jobs:
         command: pytest -m grading -k test_assemble_refinement_convergence
         timeout: 600
         max-score: 4
+      continue-on-error: true
 
     - name: Local Stiffness P1 Triangle
       id: local-stiffness-p1-triangle
@@ -132,6 +142,7 @@ jobs:
         command: pytest -m grading -k test_local_stiffness_p1_triangle
         timeout: 600
         max-score: 4
+      continue-on-error: true
 
     - name: Local Stiffness P1 Triangle Positive Definite
       id: local-stiffness-p1-triangle-positive-definite
@@ -142,6 +153,7 @@ jobs:
         command: pytest -m grading -k test_local_stiffness_p1_triangle_positive_definite
         timeout: 600
         max-score: 4
+      continue-on-error: true
 
     - name: Local Mass P1 Triangle
       id: local-mass-p1-triangle
@@ -152,6 +164,7 @@ jobs:
         command: pytest -m grading -k test_local_mass_p1_triangle
         timeout: 600
         max-score: 4
+      continue-on-error: true
 
     - name: Local Mass P1 Triangle Sum
       id: local-mass-p1-triangle-sum
@@ -162,6 +175,7 @@ jobs:
         command: pytest -m grading -k test_local_mass_p1_triangle_sum
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: Local Load P1 Triangle
       id: local-load-p1-triangle
@@ -172,6 +186,7 @@ jobs:
         command: pytest -m grading -k test_local_load_p1_triangle
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: Local Load P1 Triangle Variable
       id: local-load-p1-triangle-variable
@@ -182,6 +197,7 @@ jobs:
         command: pytest -m grading -k test_local_load_p1_triangle_variable
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: Local Matrices Symmetry
       id: local-matrices-symmetry
@@ -192,6 +208,7 @@ jobs:
         command: pytest -m grading -k test_local_matrices_symmetry
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: Triangle Area Unit
       id: triangle-area-unit
@@ -202,6 +219,7 @@ jobs:
         command: pytest -m grading -k test_triangle_area_unit
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: Triangle Area General
       id: triangle-area-general
@@ -212,6 +230,7 @@ jobs:
         command: pytest -m grading -k test_triangle_area_general
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: Triangle Area Larger
       id: triangle-area-larger
@@ -222,6 +241,7 @@ jobs:
         command: pytest -m grading -k test_triangle_area_larger
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: Triangle Area Invalid Shape
       id: triangle-area-invalid-shape
@@ -232,6 +252,7 @@ jobs:
         command: pytest -m grading -k test_triangle_area_invalid_shape
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: Triangle Area Negative Orientation
       id: triangle-area-negative-orientation
@@ -242,6 +263,7 @@ jobs:
         command: pytest -m grading -k test_triangle_area_negative_orientation
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: P1 Gradients Unit Triangle
       id: p1-gradients-unit-triangle
@@ -252,6 +274,7 @@ jobs:
         command: pytest -m grading -k test_p1_gradients_unit_triangle
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: P1 Gradients Sum To Zero
       id: p1-gradients-sum-to-zero
@@ -262,6 +285,7 @@ jobs:
         command: pytest -m grading -k test_p1_gradients_sum_to_zero
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: P1 Gradients General Triangle
       id: p1-gradients-general-triangle
@@ -272,6 +296,7 @@ jobs:
         command: pytest -m grading -k test_p1_gradients_general_triangle
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: P1 Gradients Invalid Shape
       id: p1-gradients-invalid-shape
@@ -282,6 +307,7 @@ jobs:
         command: pytest -m grading -k test_p1_gradients_invalid_shape
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: P1 Gradients Degenerate Triangle
       id: p1-gradients-degenerate-triangle
@@ -292,6 +318,7 @@ jobs:
         command: pytest -m grading -k test_p1_gradients_degenerate_triangle
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: P1 Gradients Negative Orientation
       id: p1-gradients-negative-orientation
@@ -302,6 +329,7 @@ jobs:
         command: pytest -m grading -k test_p1_gradients_negative_orientation
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: P1 Gradients Constant On Affine Functions
       id: p1-gradients-constant-on-affine-functions
@@ -312,10 +340,12 @@ jobs:
         command: pytest -m grading -k test_p1_gradients_constant_on_affine_functions
         timeout: 600
         max-score: 3
+      continue-on-error: true
 
     - name: Autograding Reporter
       id: autograding-reporter
       uses: classroom-resources/autograding-grading-reporter@v1
+      if: always()
       env:
         POISSON-2D-MMS-CONVERGES_RESULTS: "${{steps.poisson-2d-mms-converges.outputs.result}}"
         L2-H1-ERRORS-TRIANGLE-EXACT_RESULTS: "${{steps.l2-h1-errors-triangle-exact.outputs.result}}"
@@ -354,8 +384,8 @@ jobs:
       if: always()
       with:
         script: |
-          const points = ${{ steps.autograding-reporter.outputs.points }}
-          const availablePoints = ${{ steps.autograding-reporter.outputs.available-points }}
+          const points = "${{ steps.autograding-reporter.outputs.points }}"
+          const availablePoints = "${{ steps.autograding-reporter.outputs.available-points }}"
 
           // Find the PR associated with this push
           const prs = await github.rest.pulls.list({

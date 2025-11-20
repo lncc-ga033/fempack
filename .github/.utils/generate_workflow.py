@@ -61,6 +61,7 @@ for test in tests:
         command: {run_cmd}
         timeout: {timeout}
         max-score: {points}
+      continue-on-error: true
 
 """
     env_vars[f"{test_id.upper()}_RESULTS"] = "${{steps." + test_id + ".outputs.result}}"
@@ -68,6 +69,7 @@ for test in tests:
 yaml_content += """    - name: Autograding Reporter
       id: autograding-reporter
       uses: classroom-resources/autograding-grading-reporter@v1
+      if: always()
       env:
 """
 
@@ -83,8 +85,8 @@ yaml_content += """
       if: always()
       with:
         script: |
-          const points = ${{ steps.autograding-reporter.outputs.points }}
-          const availablePoints = ${{ steps.autograding-reporter.outputs.available-points }}
+          const points = "${{ steps.autograding-reporter.outputs.points }}"
+          const availablePoints = "${{ steps.autograding-reporter.outputs.available-points }}"
 
           // Find the PR associated with this push
           const prs = await github.rest.pulls.list({
