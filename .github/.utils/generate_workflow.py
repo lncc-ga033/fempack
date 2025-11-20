@@ -36,9 +36,6 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Install dependencies
-      run: pip install -e '.[dev]'
-
 """
 
 runner_ids = []
@@ -51,6 +48,7 @@ for test in tests:
 
     # Escape single quotes in run command if necessary, though YAML block scalar handles most
     run_cmd = test["run"]
+    setup_cmd = test["setup"]
     points = test["points"]
     timeout = test.get("timeout", 10)
 
@@ -59,7 +57,7 @@ for test in tests:
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: {test_name}
-        setup-command: '' # Dependencies installed globally
+        setup-command: {setup_cmd}
         command: {run_cmd}
         timeout: {timeout}
         max-score: {points}
