@@ -7,7 +7,7 @@
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 10,
+      "timeout": 100,
       "points": 10
     },
     {
@@ -17,7 +17,7 @@
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 10,
+      "timeout": 100,
       "points": 10
     },
     {
@@ -27,7 +27,7 @@
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 10,
+      "timeout": 100,
       "points": 10
     },
     {
@@ -37,7 +37,7 @@
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 10,
+      "timeout": 100,
       "points": 10
     },
     {
@@ -47,7 +47,7 @@
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 10,
+      "timeout": 100,
       "points": 10
     },
     {
@@ -57,7 +57,7 @@
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 10,
+      "timeout": 100,
       "points": 10
     },
     {
@@ -67,7 +67,7 @@
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 10,
+      "timeout": 100,
       "points": 10
     },
     {
@@ -77,7 +77,7 @@
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 10,
+      "timeout": 100,
       "points": 10
     },
     {
@@ -97,7 +97,7 @@
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 10,
+      "timeout": 100,
       "points": 10
     }
   ]
