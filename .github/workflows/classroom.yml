@@ -320,6 +320,7 @@ jobs:
       id: autograding-reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       if: always()
+      continue-on-error: true
       env:
         POISSON_2D_MMS_CONVERGES_RESULTS: "${{steps.poisson_2d_mms_converges.outputs.result}}"
         L2_H1_ERRORS_TRIANGLE_EXACT_RESULTS: "${{steps.l2_h1_errors_triangle_exact.outputs.result}}"

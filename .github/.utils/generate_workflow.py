@@ -73,6 +73,7 @@ yaml_content += """    - name: Autograding Reporter
       id: autograding-reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       if: always()
+      continue-on-error: true
       env:
 """
 
