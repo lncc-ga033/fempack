@@ -26,8 +26,8 @@ pre-commit install
 # Run tests
 pytest
 
-# Open notebooks
-jupyter lab
+# Open the source code using VS Code (or any compatible IDE)
+code .
 ```
 
 ## Features
