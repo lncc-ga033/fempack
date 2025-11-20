@@ -87,13 +87,43 @@ yaml_content += """
     - name: Post Autograding Results
       uses: actions/github-script@v6
       if: always()
-      with:
-        script: |
-          const points = "${{ steps.autograding-reporter.outputs.points }}" || "${{ steps.autograding-reporter.outputs.totalPoints }}";
-          const availablePoints = "${{ steps.autograding-reporter.outputs.available-points }}" || "${{ steps.autograding-reporter.outputs.maxPoints }}";
+      env:
+"""
 
-          const finalPoints = (points && points !== "undefined") ? points : "0";
-          const finalAvailablePoints = (availablePoints && availablePoints !== "undefined") ? availablePoints : "0";
+for key, value in env_vars.items():
+    yaml_content += f'        {key}: "{value}"\n'
+
+yaml_content += """      with:
+        script: |
+          const results = process.env;
+          let totalPoints = 0;
+          let maxPoints = 0;
+
+          for (const key in results) {
+            if (key.endsWith('_RESULTS')) {
+              const result = results[key];
+              if (!result) continue;
+
+              try {
+                const decoded = Buffer.from(result, 'base64').toString('utf-8');
+                const json = JSON.parse(decoded);
+
+                if (json.max_score) {
+                  maxPoints += json.max_score;
+                }
+
+                if (json.tests && Array.isArray(json.tests)) {
+                  json.tests.forEach(test => {
+                    if (test.score) {
+                      totalPoints += test.score;
+                    }
+                  });
+                }
+              } catch (e) {
+                console.log(`Error parsing ${key}: ${e.message}`);
+              }
+            }
+          }
 
           // Find the PR associated with this push
           const prs = await github.rest.pulls.list({
@@ -109,7 +139,7 @@ yaml_content += """
               issue_number: pr.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `Autograding points: ${finalPoints}/${finalAvailablePoints}`
+              body: `Autograding points: ${totalPoints}/${maxPoints}`
             });
           }
 """

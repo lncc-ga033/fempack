@@ -357,13 +357,67 @@ jobs:
     - name: Post Autograding Results
       uses: actions/github-script@v6
       if: always()
+      env:
+        POISSON_2D_MMS_CONVERGES_RESULTS: "${{steps.poisson_2d_mms_converges.outputs.result}}"
+        L2_H1_ERRORS_TRIANGLE_EXACT_RESULTS: "${{steps.l2_h1_errors_triangle_exact.outputs.result}}"
+        L2_H1_ERRORS_CONVERGENCE_TRIANGLE_RESULTS: "${{steps.l2_h1_errors_convergence_triangle.outputs.result}}"
+        ASSEMBLE_STIFFNESS_2D_TRIANGLE_RESULTS: "${{steps.assemble_stiffness_2d_triangle.outputs.result}}"
+        ASSEMBLE_MASS_2D_TRIANGLE_RESULTS: "${{steps.assemble_mass_2d_triangle.outputs.result}}"
+        ASSEMBLE_MASS_2D_SUM_RESULTS: "${{steps.assemble_mass_2d_sum.outputs.result}}"
+        ASSEMBLE_LOAD_2D_CONSTANT_RESULTS: "${{steps.assemble_load_2d_constant.outputs.result}}"
+        ASSEMBLE_LOAD_2D_VARIABLE_RESULTS: "${{steps.assemble_load_2d_variable.outputs.result}}"
+        ASSEMBLE_CONSISTENCY_TRIANGLE_VS_QUAD_RESULTS: "${{steps.assemble_consistency_triangle_vs_quad.outputs.result}}"
+        ASSEMBLE_REFINEMENT_CONVERGENCE_RESULTS: "${{steps.assemble_refinement_convergence.outputs.result}}"
+        LOCAL_STIFFNESS_P1_TRIANGLE_RESULTS: "${{steps.local_stiffness_p1_triangle.outputs.result}}"
+        LOCAL_STIFFNESS_P1_TRIANGLE_POSITIVE_DEFINITE_RESULTS: "${{steps.local_stiffness_p1_triangle_positive_definite.outputs.result}}"
+        LOCAL_MASS_P1_TRIANGLE_RESULTS: "${{steps.local_mass_p1_triangle.outputs.result}}"
+        LOCAL_MASS_P1_TRIANGLE_SUM_RESULTS: "${{steps.local_mass_p1_triangle_sum.outputs.result}}"
+        LOCAL_LOAD_P1_TRIANGLE_RESULTS: "${{steps.local_load_p1_triangle.outputs.result}}"
+        LOCAL_LOAD_P1_TRIANGLE_VARIABLE_RESULTS: "${{steps.local_load_p1_triangle_variable.outputs.result}}"
+        LOCAL_MATRICES_SYMMETRY_RESULTS: "${{steps.local_matrices_symmetry.outputs.result}}"
+        TRIANGLE_AREA_UNIT_RESULTS: "${{steps.triangle_area_unit.outputs.result}}"
+        TRIANGLE_AREA_GENERAL_RESULTS: "${{steps.triangle_area_general.outputs.result}}"
+        TRIANGLE_AREA_LARGER_RESULTS: "${{steps.triangle_area_larger.outputs.result}}"
+        TRIANGLE_AREA_INVALID_SHAPE_RESULTS: "${{steps.triangle_area_invalid_shape.outputs.result}}"
+        TRIANGLE_AREA_NEGATIVE_ORIENTATION_RESULTS: "${{steps.triangle_area_negative_orientation.outputs.result}}"
+        P1_GRADIENTS_UNIT_TRIANGLE_RESULTS: "${{steps.p1_gradients_unit_triangle.outputs.result}}"
+        P1_GRADIENTS_SUM_TO_ZERO_RESULTS: "${{steps.p1_gradients_sum_to_zero.outputs.result}}"
+        P1_GRADIENTS_GENERAL_TRIANGLE_RESULTS: "${{steps.p1_gradients_general_triangle.outputs.result}}"
+        P1_GRADIENTS_INVALID_SHAPE_RESULTS: "${{steps.p1_gradients_invalid_shape.outputs.result}}"
+        P1_GRADIENTS_DEGENERATE_TRIANGLE_RESULTS: "${{steps.p1_gradients_degenerate_triangle.outputs.result}}"
+        P1_GRADIENTS_NEGATIVE_ORIENTATION_RESULTS: "${{steps.p1_gradients_negative_orientation.outputs.result}}"
+        P1_GRADIENTS_CONSTANT_ON_AFFINE_FUNCTIONS_RESULTS: "${{steps.p1_gradients_constant_on_affine_functions.outputs.result}}"
       with:
         script: |
-          const points = "${{ steps.autograding-reporter.outputs.points }}" || "${{ steps.autograding-reporter.outputs.totalPoints }}";
-          const availablePoints = "${{ steps.autograding-reporter.outputs.available-points }}" || "${{ steps.autograding-reporter.outputs.maxPoints }}";
+          const results = process.env;
+          let totalPoints = 0;
+          let maxPoints = 0;
 
-          const finalPoints = (points && points !== "undefined") ? points : "0";
-          const finalAvailablePoints = (availablePoints && availablePoints !== "undefined") ? availablePoints : "0";
+          for (const key in results) {
+            if (key.endsWith('_RESULTS')) {
+              const result = results[key];
+              if (!result) continue;
+
+              try {
+                const decoded = Buffer.from(result, 'base64').toString('utf-8');
+                const json = JSON.parse(decoded);
+
+                if (json.max_score) {
+                  maxPoints += json.max_score;
+                }
+
+                if (json.tests && Array.isArray(json.tests)) {
+                  json.tests.forEach(test => {
+                    if (test.score) {
+                      totalPoints += test.score;
+                    }
+                  });
+                }
+              } catch (e) {
+                console.log(`Error parsing ${key}: ${e.message}`);
+              }
+            }
+          }
 
           // Find the PR associated with this push
           const prs = await github.rest.pulls.list({
@@ -379,6 +433,6 @@ jobs:
               issue_number: pr.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `Autograding points: ${finalPoints}/${finalAvailablePoints}`
+              body: `Autograding points: ${totalPoints}/${maxPoints}`
             });
           }
