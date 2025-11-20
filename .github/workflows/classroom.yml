@@ -27,7 +27,7 @@ jobs:
       run: pip install -e '.[dev]'
 
     - name: Poisson 2D MMS Converges
-      id: poisson-2d-mms-converges
+      id: poisson_2d_mms_converges
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Poisson 2D MMS Converges
@@ -37,7 +37,7 @@ jobs:
       continue-on-error: true
 
     - name: L2 H1 Errors Triangle Exact
-      id: l2-h1-errors-triangle-exact
+      id: l2_h1_errors_triangle_exact
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: L2 H1 Errors Triangle Exact
@@ -47,7 +47,7 @@ jobs:
       continue-on-error: true
 
     - name: L2 H1 Errors Convergence Triangle
-      id: l2-h1-errors-convergence-triangle
+      id: l2_h1_errors_convergence_triangle
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: L2 H1 Errors Convergence Triangle
@@ -57,7 +57,7 @@ jobs:
       continue-on-error: true
 
     - name: Assemble Stiffness 2D Triangle
-      id: assemble-stiffness-2d-triangle
+      id: assemble_stiffness_2d_triangle
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Assemble Stiffness 2D Triangle
@@ -67,7 +67,7 @@ jobs:
       continue-on-error: true
 
     - name: Assemble Mass 2D Triangle
-      id: assemble-mass-2d-triangle
+      id: assemble_mass_2d_triangle
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Assemble Mass 2D Triangle
@@ -77,7 +77,7 @@ jobs:
       continue-on-error: true
 
     - name: Assemble Mass 2D Sum
-      id: assemble-mass-2d-sum
+      id: assemble_mass_2d_sum
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Assemble Mass 2D Sum
@@ -87,7 +87,7 @@ jobs:
       continue-on-error: true
 
     - name: Assemble Load 2D Constant
-      id: assemble-load-2d-constant
+      id: assemble_load_2d_constant
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Assemble Load 2D Constant
@@ -97,7 +97,7 @@ jobs:
       continue-on-error: true
 
     - name: Assemble Load 2D Variable
-      id: assemble-load-2d-variable
+      id: assemble_load_2d_variable
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Assemble Load 2D Variable
@@ -107,7 +107,7 @@ jobs:
       continue-on-error: true
 
     - name: Assemble Consistency Triangle vs Quad
-      id: assemble-consistency-triangle-vs-quad
+      id: assemble_consistency_triangle_vs_quad
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Assemble Consistency Triangle vs Quad
@@ -117,7 +117,7 @@ jobs:
       continue-on-error: true
 
     - name: Assemble Refinement Convergence
-      id: assemble-refinement-convergence
+      id: assemble_refinement_convergence
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Assemble Refinement Convergence
@@ -127,7 +127,7 @@ jobs:
       continue-on-error: true
 
     - name: Local Stiffness P1 Triangle
-      id: local-stiffness-p1-triangle
+      id: local_stiffness_p1_triangle
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Local Stiffness P1 Triangle
@@ -137,7 +137,7 @@ jobs:
       continue-on-error: true
 
     - name: Local Stiffness P1 Triangle Positive Definite
-      id: local-stiffness-p1-triangle-positive-definite
+      id: local_stiffness_p1_triangle_positive_definite
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Local Stiffness P1 Triangle Positive Definite
@@ -147,7 +147,7 @@ jobs:
       continue-on-error: true
 
     - name: Local Mass P1 Triangle
-      id: local-mass-p1-triangle
+      id: local_mass_p1_triangle
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Local Mass P1 Triangle
@@ -157,7 +157,7 @@ jobs:
       continue-on-error: true
 
     - name: Local Mass P1 Triangle Sum
-      id: local-mass-p1-triangle-sum
+      id: local_mass_p1_triangle_sum
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Local Mass P1 Triangle Sum
@@ -167,7 +167,7 @@ jobs:
       continue-on-error: true
 
     - name: Local Load P1 Triangle
-      id: local-load-p1-triangle
+      id: local_load_p1_triangle
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Local Load P1 Triangle
@@ -177,7 +177,7 @@ jobs:
       continue-on-error: true
 
     - name: Local Load P1 Triangle Variable
-      id: local-load-p1-triangle-variable
+      id: local_load_p1_triangle_variable
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Local Load P1 Triangle Variable
@@ -187,7 +187,7 @@ jobs:
       continue-on-error: true
 
     - name: Local Matrices Symmetry
-      id: local-matrices-symmetry
+      id: local_matrices_symmetry
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Local Matrices Symmetry
@@ -197,7 +197,7 @@ jobs:
       continue-on-error: true
 
     - name: Triangle Area Unit
-      id: triangle-area-unit
+      id: triangle_area_unit
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Triangle Area Unit
@@ -207,7 +207,7 @@ jobs:
       continue-on-error: true
 
     - name: Triangle Area General
-      id: triangle-area-general
+      id: triangle_area_general
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Triangle Area General
@@ -217,7 +217,7 @@ jobs:
       continue-on-error: true
 
     - name: Triangle Area Larger
-      id: triangle-area-larger
+      id: triangle_area_larger
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Triangle Area Larger
@@ -227,7 +227,7 @@ jobs:
       continue-on-error: true
 
     - name: Triangle Area Invalid Shape
-      id: triangle-area-invalid-shape
+      id: triangle_area_invalid_shape
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Triangle Area Invalid Shape
@@ -237,7 +237,7 @@ jobs:
       continue-on-error: true
 
     - name: Triangle Area Negative Orientation
-      id: triangle-area-negative-orientation
+      id: triangle_area_negative_orientation
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Triangle Area Negative Orientation
@@ -247,7 +247,7 @@ jobs:
       continue-on-error: true
 
     - name: P1 Gradients Unit Triangle
-      id: p1-gradients-unit-triangle
+      id: p1_gradients_unit_triangle
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: P1 Gradients Unit Triangle
@@ -257,7 +257,7 @@ jobs:
       continue-on-error: true
 
     - name: P1 Gradients Sum To Zero
-      id: p1-gradients-sum-to-zero
+      id: p1_gradients_sum_to_zero
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: P1 Gradients Sum To Zero
@@ -267,7 +267,7 @@ jobs:
       continue-on-error: true
 
     - name: P1 Gradients General Triangle
-      id: p1-gradients-general-triangle
+      id: p1_gradients_general_triangle
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: P1 Gradients General Triangle
@@ -277,7 +277,7 @@ jobs:
       continue-on-error: true
 
     - name: P1 Gradients Invalid Shape
-      id: p1-gradients-invalid-shape
+      id: p1_gradients_invalid_shape
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: P1 Gradients Invalid Shape
@@ -287,7 +287,7 @@ jobs:
       continue-on-error: true
 
     - name: P1 Gradients Degenerate Triangle
-      id: p1-gradients-degenerate-triangle
+      id: p1_gradients_degenerate_triangle
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: P1 Gradients Degenerate Triangle
@@ -297,7 +297,7 @@ jobs:
       continue-on-error: true
 
     - name: P1 Gradients Negative Orientation
-      id: p1-gradients-negative-orientation
+      id: p1_gradients_negative_orientation
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: P1 Gradients Negative Orientation
@@ -307,7 +307,7 @@ jobs:
       continue-on-error: true
 
     - name: P1 Gradients Constant On Affine Functions
-      id: p1-gradients-constant-on-affine-functions
+      id: p1_gradients_constant_on_affine_functions
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: P1 Gradients Constant On Affine Functions
@@ -321,37 +321,37 @@ jobs:
       uses: classroom-resources/autograding-grading-reporter@v1
       if: always()
       env:
-        POISSON_2D_MMS_CONVERGES_RESULTS: "${{steps.poisson-2d-mms-converges.outputs.result}}"
-        L2_H1_ERRORS_TRIANGLE_EXACT_RESULTS: "${{steps.l2-h1-errors-triangle-exact.outputs.result}}"
-        L2_H1_ERRORS_CONVERGENCE_TRIANGLE_RESULTS: "${{steps.l2-h1-errors-convergence-triangle.outputs.result}}"
-        ASSEMBLE_STIFFNESS_2D_TRIANGLE_RESULTS: "${{steps.assemble-stiffness-2d-triangle.outputs.result}}"
-        ASSEMBLE_MASS_2D_TRIANGLE_RESULTS: "${{steps.assemble-mass-2d-triangle.outputs.result}}"
-        ASSEMBLE_MASS_2D_SUM_RESULTS: "${{steps.assemble-mass-2d-sum.outputs.result}}"
-        ASSEMBLE_LOAD_2D_CONSTANT_RESULTS: "${{steps.assemble-load-2d-constant.outputs.result}}"
-        ASSEMBLE_LOAD_2D_VARIABLE_RESULTS: "${{steps.assemble-load-2d-variable.outputs.result}}"
-        ASSEMBLE_CONSISTENCY_TRIANGLE_VS_QUAD_RESULTS: "${{steps.assemble-consistency-triangle-vs-quad.outputs.result}}"
-        ASSEMBLE_REFINEMENT_CONVERGENCE_RESULTS: "${{steps.assemble-refinement-convergence.outputs.result}}"
-        LOCAL_STIFFNESS_P1_TRIANGLE_RESULTS: "${{steps.local-stiffness-p1-triangle.outputs.result}}"
-        LOCAL_STIFFNESS_P1_TRIANGLE_POSITIVE_DEFINITE_RESULTS: "${{steps.local-stiffness-p1-triangle-positive-definite.outputs.result}}"
-        LOCAL_MASS_P1_TRIANGLE_RESULTS: "${{steps.local-mass-p1-triangle.outputs.result}}"
-        LOCAL_MASS_P1_TRIANGLE_SUM_RESULTS: "${{steps.local-mass-p1-triangle-sum.outputs.result}}"
-        LOCAL_LOAD_P1_TRIANGLE_RESULTS: "${{steps.local-load-p1-triangle.outputs.result}}"
-        LOCAL_LOAD_P1_TRIANGLE_VARIABLE_RESULTS: "${{steps.local-load-p1-triangle-variable.outputs.result}}"
-        LOCAL_MATRICES_SYMMETRY_RESULTS: "${{steps.local-matrices-symmetry.outputs.result}}"
-        TRIANGLE_AREA_UNIT_RESULTS: "${{steps.triangle-area-unit.outputs.result}}"
-        TRIANGLE_AREA_GENERAL_RESULTS: "${{steps.triangle-area-general.outputs.result}}"
-        TRIANGLE_AREA_LARGER_RESULTS: "${{steps.triangle-area-larger.outputs.result}}"
-        TRIANGLE_AREA_INVALID_SHAPE_RESULTS: "${{steps.triangle-area-invalid-shape.outputs.result}}"
-        TRIANGLE_AREA_NEGATIVE_ORIENTATION_RESULTS: "${{steps.triangle-area-negative-orientation.outputs.result}}"
-        P1_GRADIENTS_UNIT_TRIANGLE_RESULTS: "${{steps.p1-gradients-unit-triangle.outputs.result}}"
-        P1_GRADIENTS_SUM_TO_ZERO_RESULTS: "${{steps.p1-gradients-sum-to-zero.outputs.result}}"
-        P1_GRADIENTS_GENERAL_TRIANGLE_RESULTS: "${{steps.p1-gradients-general-triangle.outputs.result}}"
-        P1_GRADIENTS_INVALID_SHAPE_RESULTS: "${{steps.p1-gradients-invalid-shape.outputs.result}}"
-        P1_GRADIENTS_DEGENERATE_TRIANGLE_RESULTS: "${{steps.p1-gradients-degenerate-triangle.outputs.result}}"
-        P1_GRADIENTS_NEGATIVE_ORIENTATION_RESULTS: "${{steps.p1-gradients-negative-orientation.outputs.result}}"
-        P1_GRADIENTS_CONSTANT_ON_AFFINE_FUNCTIONS_RESULTS: "${{steps.p1-gradients-constant-on-affine-functions.outputs.result}}"
+        POISSON_2D_MMS_CONVERGES_RESULTS: "${{steps.poisson_2d_mms_converges.outputs.result}}"
+        L2_H1_ERRORS_TRIANGLE_EXACT_RESULTS: "${{steps.l2_h1_errors_triangle_exact.outputs.result}}"
+        L2_H1_ERRORS_CONVERGENCE_TRIANGLE_RESULTS: "${{steps.l2_h1_errors_convergence_triangle.outputs.result}}"
+        ASSEMBLE_STIFFNESS_2D_TRIANGLE_RESULTS: "${{steps.assemble_stiffness_2d_triangle.outputs.result}}"
+        ASSEMBLE_MASS_2D_TRIANGLE_RESULTS: "${{steps.assemble_mass_2d_triangle.outputs.result}}"
+        ASSEMBLE_MASS_2D_SUM_RESULTS: "${{steps.assemble_mass_2d_sum.outputs.result}}"
+        ASSEMBLE_LOAD_2D_CONSTANT_RESULTS: "${{steps.assemble_load_2d_constant.outputs.result}}"
+        ASSEMBLE_LOAD_2D_VARIABLE_RESULTS: "${{steps.assemble_load_2d_variable.outputs.result}}"
+        ASSEMBLE_CONSISTENCY_TRIANGLE_VS_QUAD_RESULTS: "${{steps.assemble_consistency_triangle_vs_quad.outputs.result}}"
+        ASSEMBLE_REFINEMENT_CONVERGENCE_RESULTS: "${{steps.assemble_refinement_convergence.outputs.result}}"
+        LOCAL_STIFFNESS_P1_TRIANGLE_RESULTS: "${{steps.local_stiffness_p1_triangle.outputs.result}}"
+        LOCAL_STIFFNESS_P1_TRIANGLE_POSITIVE_DEFINITE_RESULTS: "${{steps.local_stiffness_p1_triangle_positive_definite.outputs.result}}"
+        LOCAL_MASS_P1_TRIANGLE_RESULTS: "${{steps.local_mass_p1_triangle.outputs.result}}"
+        LOCAL_MASS_P1_TRIANGLE_SUM_RESULTS: "${{steps.local_mass_p1_triangle_sum.outputs.result}}"
+        LOCAL_LOAD_P1_TRIANGLE_RESULTS: "${{steps.local_load_p1_triangle.outputs.result}}"
+        LOCAL_LOAD_P1_TRIANGLE_VARIABLE_RESULTS: "${{steps.local_load_p1_triangle_variable.outputs.result}}"
+        LOCAL_MATRICES_SYMMETRY_RESULTS: "${{steps.local_matrices_symmetry.outputs.result}}"
+        TRIANGLE_AREA_UNIT_RESULTS: "${{steps.triangle_area_unit.outputs.result}}"
+        TRIANGLE_AREA_GENERAL_RESULTS: "${{steps.triangle_area_general.outputs.result}}"
+        TRIANGLE_AREA_LARGER_RESULTS: "${{steps.triangle_area_larger.outputs.result}}"
+        TRIANGLE_AREA_INVALID_SHAPE_RESULTS: "${{steps.triangle_area_invalid_shape.outputs.result}}"
+        TRIANGLE_AREA_NEGATIVE_ORIENTATION_RESULTS: "${{steps.triangle_area_negative_orientation.outputs.result}}"
+        P1_GRADIENTS_UNIT_TRIANGLE_RESULTS: "${{steps.p1_gradients_unit_triangle.outputs.result}}"
+        P1_GRADIENTS_SUM_TO_ZERO_RESULTS: "${{steps.p1_gradients_sum_to_zero.outputs.result}}"
+        P1_GRADIENTS_GENERAL_TRIANGLE_RESULTS: "${{steps.p1_gradients_general_triangle.outputs.result}}"
+        P1_GRADIENTS_INVALID_SHAPE_RESULTS: "${{steps.p1_gradients_invalid_shape.outputs.result}}"
+        P1_GRADIENTS_DEGENERATE_TRIANGLE_RESULTS: "${{steps.p1_gradients_degenerate_triangle.outputs.result}}"
+        P1_GRADIENTS_NEGATIVE_ORIENTATION_RESULTS: "${{steps.p1_gradients_negative_orientation.outputs.result}}"
+        P1_GRADIENTS_CONSTANT_ON_AFFINE_FUNCTIONS_RESULTS: "${{steps.p1_gradients_constant_on_affine_functions.outputs.result}}"
       with:
-        runners: poisson-2d-mms-converges,l2-h1-errors-triangle-exact,l2-h1-errors-convergence-triangle,assemble-stiffness-2d-triangle,assemble-mass-2d-triangle,assemble-mass-2d-sum,assemble-load-2d-constant,assemble-load-2d-variable,assemble-consistency-triangle-vs-quad,assemble-refinement-convergence,local-stiffness-p1-triangle,local-stiffness-p1-triangle-positive-definite,local-mass-p1-triangle,local-mass-p1-triangle-sum,local-load-p1-triangle,local-load-p1-triangle-variable,local-matrices-symmetry,triangle-area-unit,triangle-area-general,triangle-area-larger,triangle-area-invalid-shape,triangle-area-negative-orientation,p1-gradients-unit-triangle,p1-gradients-sum-to-zero,p1-gradients-general-triangle,p1-gradients-invalid-shape,p1-gradients-degenerate-triangle,p1-gradients-negative-orientation,p1-gradients-constant-on-affine-functions
+        runners: 'poisson_2d_mms_converges,l2_h1_errors_triangle_exact,l2_h1_errors_convergence_triangle,assemble_stiffness_2d_triangle,assemble_mass_2d_triangle,assemble_mass_2d_sum,assemble_load_2d_constant,assemble_load_2d_variable,assemble_consistency_triangle_vs_quad,assemble_refinement_convergence,local_stiffness_p1_triangle,local_stiffness_p1_triangle_positive_definite,local_mass_p1_triangle,local_mass_p1_triangle_sum,local_load_p1_triangle,local_load_p1_triangle_variable,local_matrices_symmetry,triangle_area_unit,triangle_area_general,triangle_area_larger,triangle_area_invalid_shape,triangle_area_negative_orientation,p1_gradients_unit_triangle,p1_gradients_sum_to_zero,p1_gradients_general_triangle,p1_gradients_invalid_shape,p1_gradients_degenerate_triangle,p1_gradients_negative_orientation,p1_gradients_constant_on_affine_functions'
 
     - name: Post Autograding Results
       uses: actions/github-script@v6

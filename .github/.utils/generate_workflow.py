@@ -3,7 +3,7 @@ import re
 
 
 def sanitize_id(name):
-    return re.sub(r"[^a-zA-Z0-9]", "-", name).lower().strip("-")
+    return re.sub(r"[^a-zA-Z0-9]", "_", name).lower().strip("_")
 
 
 with open(".github/classroom/autograding.json", "r") as f:
@@ -80,7 +80,7 @@ for key, value in env_vars.items():
     yaml_content += f'        {key}: "{value}"\n'
 
 yaml_content += "      with:\n"
-yaml_content += f"        runners: {','.join(runner_ids)}\n"
+yaml_content += f"        runners: '{','.join(runner_ids)}'\n"
 
 yaml_content += """
     - name: Post Autograding Results
