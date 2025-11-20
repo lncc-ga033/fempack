@@ -1,15 +1,104 @@
 {
   "tests": [
     {
-      "name": "pytest",
-      "setup": "python -m pip install --upgrade pip && pip install -e .[dev]",
-      "run": "pytest -m grading",
+      "name": "Subtract Basic",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_subtract_basic",
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 600,
-      "points": 100
+      "timeout": 100,
+      "points": 10
+    },
+    {
+      "name": "Multiply Basic",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_multiply_basic",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 100,
+      "points": 10
+    },
+    {
+      "name": "Divide Basic",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_divide_basic",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 100,
+      "points": 10
+    },
+    {
+      "name": "Divide By Zero",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_divide_by_zero",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 100,
+      "points": 10
+    },
+    {
+      "name": "Power Basic",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_power_basic",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 100,
+      "points": 10
+    },
+    {
+      "name": "Sqrt Basic",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_sqrt_basic",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 100,
+      "points": 10
+    },
+    {
+      "name": "Sqrt Negative",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_sqrt_negative",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 100,
+      "points": 10
+    },
+    {
+      "name": "Factorial Basic",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_factorial_basic",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 100,
+      "points": 10
+    },
+    {
+      "name": "Is Prime Basic",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_is_prime_basic",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Mean Basic",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_mean_basic",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 100,
+      "points": 10
     }
-  ],
-  "version": 0
+  ]
 }
