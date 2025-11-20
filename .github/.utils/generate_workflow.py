@@ -89,8 +89,8 @@ yaml_content += """
       if: always()
       with:
         script: |
-          const points = "${{ steps.autograding-reporter.outputs.points }}";
-          const availablePoints = "${{ steps.autograding-reporter.outputs.available-points }}";
+          const points = "${{ steps.autograding-reporter.outputs.points }}" || "${{ steps.autograding-reporter.outputs.totalPoints }}";
+          const availablePoints = "${{ steps.autograding-reporter.outputs.available-points }}" || "${{ steps.autograding-reporter.outputs.maxPoints }}";
 
           const finalPoints = (points && points !== "undefined") ? points : "0";
           const finalAvailablePoints = (availablePoints && availablePoints !== "undefined") ? availablePoints : "0";
