@@ -1,104 +1,294 @@
 {
   "tests": [
     {
-      "name": "Subtract Basic",
+      "name": "Poisson 2D MMS Converges",
       "setup": "pip install -e .",
-      "run": "pytest -m grading -k test_subtract_basic",
+      "run": "pytest -m grading -k test_poisson_2d_mms_converges",
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 100,
-      "points": 10
+      "timeout": 600,
+      "points": 4
     },
     {
-      "name": "Multiply Basic",
+      "name": "L2 H1 Errors Triangle Exact",
       "setup": "pip install -e .",
-      "run": "pytest -m grading -k test_multiply_basic",
+      "run": "pytest -m grading -k test_l2_h1_errors_triangle_exact",
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 100,
-      "points": 10
+      "timeout": 600,
+      "points": 4
     },
     {
-      "name": "Divide Basic",
+      "name": "L2 H1 Errors Convergence Triangle",
       "setup": "pip install -e .",
-      "run": "pytest -m grading -k test_divide_basic",
+      "run": "pytest -m grading -k test_l2_h1_errors_convergence_triangle",
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 100,
-      "points": 10
+      "timeout": 600,
+      "points": 4
     },
     {
-      "name": "Divide By Zero",
+      "name": "Assemble Stiffness 2D Triangle",
       "setup": "pip install -e .",
-      "run": "pytest -m grading -k test_divide_by_zero",
+      "run": "pytest -m grading -k test_assemble_stiffness_2d_triangle",
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 100,
-      "points": 10
+      "timeout": 600,
+      "points": 4
     },
     {
-      "name": "Power Basic",
+      "name": "Assemble Mass 2D Triangle",
       "setup": "pip install -e .",
-      "run": "pytest -m grading -k test_power_basic",
+      "run": "pytest -m grading -k test_assemble_mass_2d_triangle",
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 100,
-      "points": 10
+      "timeout": 600,
+      "points": 4
     },
     {
-      "name": "Sqrt Basic",
+      "name": "Assemble Mass 2D Sum",
       "setup": "pip install -e .",
-      "run": "pytest -m grading -k test_sqrt_basic",
+      "run": "pytest -m grading -k test_assemble_mass_2d_sum",
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 100,
-      "points": 10
+      "timeout": 600,
+      "points": 4
     },
     {
-      "name": "Sqrt Negative",
+      "name": "Assemble Load 2D Constant",
       "setup": "pip install -e .",
-      "run": "pytest -m grading -k test_sqrt_negative",
+      "run": "pytest -m grading -k test_assemble_load_2d_constant",
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 100,
-      "points": 10
+      "timeout": 600,
+      "points": 4
     },
     {
-      "name": "Factorial Basic",
+      "name": "Assemble Load 2D Variable",
       "setup": "pip install -e .",
-      "run": "pytest -m grading -k test_factorial_basic",
+      "run": "pytest -m grading -k test_assemble_load_2d_variable",
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 100,
-      "points": 10
+      "timeout": 600,
+      "points": 4
     },
     {
-      "name": "Is Prime Basic",
+      "name": "Assemble Consistency Triangle vs Quad",
       "setup": "pip install -e .",
-      "run": "pytest -m grading -k test_is_prime_basic",
+      "run": "pytest -m grading -k test_assemble_consistency_triangle_vs_quad",
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 10,
-      "points": 10
+      "timeout": 600,
+      "points": 4
     },
     {
-      "name": "Mean Basic",
+      "name": "Assemble Refinement Convergence",
       "setup": "pip install -e .",
-      "run": "pytest -m grading -k test_mean_basic",
+      "run": "pytest -m grading -k test_assemble_refinement_convergence",
       "input": "",
       "output": "",
       "comparison": "included",
-      "timeout": 100,
-      "points": 10
+      "timeout": 600,
+      "points": 4
+    },
+    {
+      "name": "Local Stiffness P1 Triangle",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_local_stiffness_p1_triangle",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 4
+    },
+    {
+      "name": "Local Stiffness P1 Triangle Positive Definite",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_local_stiffness_p1_triangle_positive_definite",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 4
+    },
+    {
+      "name": "Local Mass P1 Triangle",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_local_mass_p1_triangle",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 4
+    },
+    {
+      "name": "Local Mass P1 Triangle Sum",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_local_mass_p1_triangle_sum",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
+    },
+    {
+      "name": "Local Load P1 Triangle",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_local_load_p1_triangle",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
+    },
+    {
+      "name": "Local Load P1 Triangle Variable",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_local_load_p1_triangle_variable",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
+    },
+    {
+      "name": "Local Matrices Symmetry",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_local_matrices_symmetry",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
+    },
+    {
+      "name": "Triangle Area Unit",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_triangle_area_unit",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
+    },
+    {
+      "name": "Triangle Area General",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_triangle_area_general",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
+    },
+    {
+      "name": "Triangle Area Larger",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_triangle_area_larger",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
+    },
+    {
+      "name": "Triangle Area Invalid Shape",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_triangle_area_invalid_shape",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
+    },
+    {
+      "name": "Triangle Area Negative Orientation",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_triangle_area_negative_orientation",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
+    },
+    {
+      "name": "P1 Gradients Unit Triangle",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_p1_gradients_unit_triangle",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
+    },
+    {
+      "name": "P1 Gradients Sum To Zero",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_p1_gradients_sum_to_zero",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
+    },
+    {
+      "name": "P1 Gradients General Triangle",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_p1_gradients_general_triangle",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
+    },
+    {
+      "name": "P1 Gradients Invalid Shape",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_p1_gradients_invalid_shape",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
+    },
+    {
+      "name": "P1 Gradients Degenerate Triangle",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_p1_gradients_degenerate_triangle",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
+    },
+    {
+      "name": "P1 Gradients Negative Orientation",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_p1_gradients_negative_orientation",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
+    },
+    {
+      "name": "P1 Gradients Constant On Affine Functions",
+      "setup": "pip install -e .",
+      "run": "pytest -m grading -k test_p1_gradients_constant_on_affine_functions",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 600,
+      "points": 3
     }
   ]
 }
