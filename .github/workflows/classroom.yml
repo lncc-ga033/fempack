@@ -16,10 +16,10 @@ jobs:
     if: github.actor != 'github-classroom[bot]'
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v6
       with:
         python-version: '3.10'
 
@@ -355,7 +355,7 @@ jobs:
         runners: 'poisson_2d_mms_converges,l2_h1_errors_triangle_exact,l2_h1_errors_convergence_triangle,assemble_stiffness_2d_triangle,assemble_mass_2d_triangle,assemble_mass_2d_sum,assemble_load_2d_constant,assemble_load_2d_variable,assemble_consistency_triangle_vs_quad,assemble_refinement_convergence,local_stiffness_p1_triangle,local_stiffness_p1_triangle_positive_definite,local_mass_p1_triangle,local_mass_p1_triangle_sum,local_load_p1_triangle,local_load_p1_triangle_variable,local_matrices_symmetry,triangle_area_unit,triangle_area_general,triangle_area_larger,triangle_area_invalid_shape,triangle_area_negative_orientation,p1_gradients_unit_triangle,p1_gradients_sum_to_zero,p1_gradients_general_triangle,p1_gradients_invalid_shape,p1_gradients_degenerate_triangle,p1_gradients_negative_orientation,p1_gradients_constant_on_affine_functions'
 
     - name: Post Autograding Results
-      uses: actions/github-script@v6
+      uses: actions/github-script@v8
       if: always()
       env:
         POISSON_2D_MMS_CONVERGES_RESULTS: "${{steps.poisson_2d_mms_converges.outputs.result}}"
