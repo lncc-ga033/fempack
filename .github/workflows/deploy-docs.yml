@@ -19,7 +19,7 @@ jobs:
   deploy-book:
     # Only run this job for the fempack repository.
     # With this condition, the student assignments repository will not attempt to deploy docs.
-    if: github.event.repository.name == 'fempack'
+    if: github.repository == 'lncc-ga033/fempack'
     runs-on: ubuntu-latest
     # Required to deploy to GitHub Pages since docs are in a subfolder
     env:
