@@ -17,6 +17,9 @@ concurrency:
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
+    # Only run this job for the fempack repository.
+    # With this condition, the student assignments repository will not attempt to deploy docs.
+    if: github.event.repository.name == 'fempack'
     runs-on: ubuntu-latest
     # Required to deploy to GitHub Pages since docs are in a subfolder
     env:
