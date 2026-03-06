@@ -36,7 +36,7 @@ def solve_poisson_1d(n: int) -> float:
     u_ex_vals = np.sin(pi * xs)
     x_nodes = mesh.coords[:, 0]
     u_num = np.interp(xs, x_nodes, uh)
-    eL2 = np.sqrt(np.trapz((u_num - u_ex_vals) ** 2, xs))
+    eL2 = np.sqrt(np.trapezoid((u_num - u_ex_vals) ** 2, xs))
     return float(eL2)
 
 
